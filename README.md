@@ -1,6 +1,4 @@
-# React Project Example
+# Book Nook
 
-To use this repository:
-- Click the "Use this template" button in the upper right
-- Choose a name for your repository and create it
-- In your own repository, click the green "Gitpod" button
+Book Nook is a cozy and welcoming space for bibliophiles to share their reviews on books they've read with fellow book lovers.
+It captures the idea of a community where readers can find refuge and camaraderie through their shared love of literature.
