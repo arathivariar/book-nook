@@ -25,6 +25,38 @@ const Review = (props) => {
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
 
+  const handleLike = async () => {
+    try {
+      const { data } = await axiosRes.review("/likes/", { review: id });
+      setReviews((prevReviews) => ({
+        ...prevReviews,
+        results: prevReviews.results.map((review) => {
+          return review.id === id
+            ? { ...review, likes_count: review.likes_count + 1, like_id: data.id }
+            : review;
+        }),
+      }));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const handleUnlike = async () => {
+    try {
+      await axiosRes.delete(`/likes/${like_id}/`);
+      setReviews((prevReviews) => ({
+        ...prevReviews,
+        results: prevReviews.results.map((review) => {
+          return review.id === id
+            ? { ...review, likes_count: review.likes_count - 1, like_id: null }
+            : review;
+        }),
+      }));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <Card className={styles.Review}>
       <Card.Body>
