@@ -8,6 +8,7 @@ import appStyles from "../../App.module.css";
 import { useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import Review from "./Review";
+import Comment from "../comments/Comment";
 import CommentCreateForm from "../comments/CommentCreateForm";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
@@ -22,11 +23,12 @@ function ReviewPage() {
   useEffect(() => {
     const handleMount = async () => {
       try {
-        const [{ data: review }] = await Promise.all([
+        const [{ data: review }, { data: comments }] = await Promise.all([
           axiosReq.get(`/reviews/${id}`),
+          axiosReq.get(`/comments/?review=${id}`),
         ]);
         setReview({ results: [review] });
-        console.log(review);
+        setComments(comments);
       } catch (err) {
         console.log(err);
       }
@@ -52,6 +54,15 @@ function ReviewPage() {
           ) : comments.results.length ? (
           "Comments"
           ) : null}
+          {comments.results.length ? (
+            comments.results.map((comment) => (
+              <Comment key={comment.id} {...comment} />
+            ))
+          ) : currentUser ? (
+            <span>No comments yet, be the first to comment!</span>
+          ) : (
+            <span>No comments... yet</span>
+          )}
         </Container>
       </Col>
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
