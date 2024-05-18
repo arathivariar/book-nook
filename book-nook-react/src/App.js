@@ -9,7 +9,7 @@ import ReviewCreateForm from "./pages/reviews/ReviewCreateForm";
 import ReviewPage from "./pages/reviews/ReviewPage";
 import ReviewsPage from "./pages/reviews/ReviewsPage";
 import { useCurrentUser } from "./contexts/CurrentUserContext";
-
+import ReviewEditForm from "./pages/reviews/ReviewEditForm";
 
 
 function App() {
@@ -52,6 +52,7 @@ function App() {
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/reviews/create" render={() => <ReviewCreateForm />} />
           <Route exact path="/reviews/:id" render={() => <ReviewPage />} />
+          <Route exact path="/reviews/:id/edit" render={() => <ReviewEditForm />} />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
       </Container>
