@@ -19,26 +19,37 @@ import {
   useSetProfileData,
 } from "../../contexts/ProfileDataContext";
 import { Button, Image } from "react-bootstrap";
+import InfiniteScroll from "react-infinite-scroll-component";
+import Review from "../reviews/Review";
+import { fetchMoreData } from "../../utils/utils";
+import NoResults from "../../assets/no-results.png";
 
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
+  const [profileReviews, setProfileReviews] = useState({ results: [] });
+
   const currentUser = useCurrentUser();
   const { id } = useParams();
+
   const setProfileData = useSetProfileData();
   const { pageProfile } = useProfileData();
+
   const [profile] = pageProfile.results;
   const is_owner = currentUser?.username === profile?.owner;
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [{ data: pageProfile }] = await Promise.all([
-          axiosReq.get(`/profiles/${id}/`),
-        ]);
+        const [{ data: pageProfile }, { data: profileReviews }] =
+          await Promise.all([
+            axiosReq.get(`/profiles/${id}/`),
+            axiosReq.get(`/reviews/?owner__profile=${id}`),
+          ]);
         setProfileData((prevState) => ({
           ...prevState,
           pageProfile: { results: [pageProfile] },
         }));
+        setProfileReviews(profileReviews);
         setHasLoaded(true);
       } catch (err) {
         console.log(err);
@@ -101,8 +112,24 @@ function ProfilePage() {
   const mainProfileReviews = (
     <>
       <hr />
-      <p className="text-center">Profile owner's reviews</p>
+      <p className="text-center">{profile?.owner}'s reviews</p>
       <hr />
+      {profileReviews.results.length ? (
+        <InfiniteScroll
+          children={profileReviews.results.map((review) => (
+            <Review key={review.id} {...review} setReviews={setProfileReviews} />
+          ))}
+          dataLength={profileReviews.results.length}
+          loader={<Asset spinner />}
+          hasMore={!!profileReviews.next}
+          next={() => fetchMoreData(profileReviews, setProfileReviews)}
+        />
+      ) : (
+        <Asset
+          src={NoResults}
+          message={`No results found, ${profile?.owner} hasn't posted any reviews yet.`}
+        />
+      )}
     </>
   );
 
