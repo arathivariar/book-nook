@@ -38,7 +38,7 @@ function ReviewEditForm() {
 
         is_owner ? setReviewData({ title, content, ratings, image }) : history.push("/");
       } catch (err) {
-        console.log(err);
+        //console.log(err);
       }
     };
 
@@ -77,7 +77,7 @@ function ReviewEditForm() {
       await axiosReq.put(`/reviews/${id}/`, formData);
       history.push(`/reviews/${id}`);
     } catch (err) {
-      console.log(err);
+      //console.log(err);
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
       }
