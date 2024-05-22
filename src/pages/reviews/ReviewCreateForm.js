@@ -24,7 +24,7 @@ function ReviewCreateForm() {
   useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
 
-  const [reviewData, setReviewtData] = useState({
+  const [reviewData, setReviewData] = useState({
     title: "",
     content: "",
     ratings: "",
