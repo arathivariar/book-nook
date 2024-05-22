@@ -72,7 +72,7 @@ function ReviewsPage({ message, filter = "" }) {
             {reviews.results.length ? (
               <InfiniteScroll
                 children={reviews.results.map((review) => (
-                  <Review key={reviews.id} {...reviews} setReviews={setReviews} />
+                  <Review key={review.id} {...review} setReviews={setReviews} />
                 ))}
                 dataLength={reviews.results.length}
                 loader={<Asset spinner />}
