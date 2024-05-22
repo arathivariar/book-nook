@@ -24,20 +24,20 @@ function ReviewCreateForm() {
   useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
 
-  const [postData, setPostData] = useState({
+  const [reviewData, setReviewtData] = useState({
     title: "",
     content: "",
     ratings: "",
     image: "",
   });
-  const { title, content, ratings, image } = postData;
+  const { title, content, ratings, image } = reviewData;
 
   const imageInput = useRef(null);
   const history = useHistory();
 
   const handleChange = (event) => {
-    setPostData({
-      ...postData,
+    setReviewData({
+      ...reviewData,
       [event.target.name]: event.target.value,
     });
   };
@@ -45,8 +45,8 @@ function ReviewCreateForm() {
   const handleChangeImage = (event) => {
     if (event.target.files.length) {
       URL.revokeObjectURL(image);
-      setPostData({
-        ...postData,
+      setReviewData({
+        ...reviewData,
         image: URL.createObjectURL(event.target.files[0]),
       });
     }
