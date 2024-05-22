@@ -3,6 +3,7 @@ import { Media } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { MoreDropdown } from "../../components/MoreDropdown";
+import ConfirmationModal from "../../components/ConfirmationModal";
 import CommentEditForm from "./CommentEditForm";
 
 import styles from "../../styles/Comment.module.css";
@@ -22,10 +23,19 @@ const Comment = (props) => {
   } = props;
 
   const [showEditForm, setShowEditForm] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
 
-  const handleDelete = async () => {
+  const handleDelete = () => {
+    setShowModal(true);
+  };
+
+  const handleClose = () => {
+    setShowModal(false);
+  };
+
+  const handleConfirm = async () => {
     try {
       await axiosRes.delete(`/comments/${id}/`);
       setReview((prevReview) => ({
@@ -74,6 +84,12 @@ const Comment = (props) => {
           />
         )}
       </Media>
+      <ConfirmationModal
+        show={showModal}
+        handleClose={handleClose}
+        handleConfirm={handleConfirm}
+        message="Are you sure you want to delete this Comment?"
+      />
     </>
   );
 };
