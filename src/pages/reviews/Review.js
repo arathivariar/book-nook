@@ -43,8 +43,9 @@ const Review = (props) => {
   };
 
   const handleLike = async () => {
+    console.log ("inside handleLike")
     try {
-      const { data } = await axiosRes.review("/likes/", { review: id });
+      const { data } = await axiosRes.post("/likes/", { review: id });
       setReviews((prevReviews) => ({
         ...prevReviews,
         results: prevReviews.results.map((review) => {
@@ -54,7 +55,7 @@ const Review = (props) => {
         }),
       }));
     } catch (err) {
-      //console.log(err);
+      console.log(err);
     }
   };
 
