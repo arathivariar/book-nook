@@ -92,7 +92,10 @@ All the images are downloaded from the internet and belongs to the respective ow
 
 # Agile Methodologies    
 
-Book Nook is my second project where I followed Agile planning methods by myself. I had done it for my portfolio project 4 and also participated in Code Institute's March Hackathon. These experiences helped me a lot as I already knew how it works. I used my Github Projects Board to plan and document all of my work. 
+Book Nook is my second project where I followed Agile planning methods by myself. I had done it for my portfolio project 4 and also participated in Code Institute's March Hackathon. These experiences helped me a lot as I already knew how it works. I used my Github Projects Board to plan and document all of my work.     
+
+[Link to user story board](https://github.com/users/arathivariar/projects/3)    
+
 
 ### MoSCoW Prioritization    
 
@@ -362,8 +365,9 @@ Most commonly, forks are used to either propose changes to someone else's projec
 - Font Awesome for icons [Font Awesome](https://fontawesome.com/)
 - Wikipedia for book cover images [Wikipedia](https://www.wikipedia.org/)
 - PNG Tree for user avatars [PNG Tree](https://www.wikipedia.org/)
+- Freepik for image used in Sign Up and Sign In forms [Freepik](https://www.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_24307396.htm)
 
   
 ### Content
-- Code Institute LMS walkthrough project Moments helped me understand and implement my project better.
+- Code Institute LMS walkthrough project "Moments" helped me understand and implement my project better.
 - My Mentor Martina for her guidance and the Slack Community for their support.
