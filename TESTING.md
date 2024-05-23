@@ -5,12 +5,26 @@
 
 ### Testing (Back-end API)    
 
-![backend](readme/testing_backend.png)    
+![backend](readme/testing/testing_backend.png)    
 
 
 ### Testing (Front-end)     
 
-![frontend](readme/testing_frontend_1.png)     
+![frontend](readme/testing/testing_frontend_1.png)     
 
 
-![frontend](readme/testing_frontend_2.png) 
+![frontend](readme/testing/testing_frontend_2.png) 
+
+
+
+# Lighthouse Testing    
+
+Lighthouse testing was performed and the performance score was not that great. Although the other metrics like accessibility, best practices, SEO are high. The main reason for the poor performance is the images used in the website. I tried to change them to Webp but the performance score didn't improve significantly.    
+
+![lighthouse](readme/testing/lighthouse_testing.png)
+
+
+# Responsiveness
+
+All pages were tested to ensure responsiveness on screen sizes from 320px and upwards on Chrome and Edge browsers.
+The website is responsive on all screen sizes and no images are pixelated or stretched. No horizontal scroll is present. No elements overlap.
