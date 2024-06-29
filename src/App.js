@@ -3,6 +3,7 @@ import NavBar from "./components/NavBar";
 import Container from "react-bootstrap/Container";
 import { Route, Switch } from "react-router-dom";
 import "./api/axiosDefaults";
+import HomePage from "./pages/HomePage";
 import SignUpForm from "./pages/auth/SignUpForm";
 import SignInForm from "./pages/auth/SignInForm";
 import ReviewCreateForm from "./pages/reviews/ReviewCreateForm";
@@ -52,6 +53,7 @@ function App() {
               />
             )}
           />
+          <Route exact path="/" render={() => <HomePage />} />
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/reviews/create" render={() => <ReviewCreateForm />} />
