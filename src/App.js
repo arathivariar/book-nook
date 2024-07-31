@@ -29,10 +29,7 @@ function App() {
           <Route
             exact
             path="/"
-            render={() => (
-              <ReviewsPage message="No results found. Adjust the search keyword." />
-            )}
-          />
+            render={() => <HomePage />} />
           <Route
             exact
             path="/feed"
@@ -53,7 +50,7 @@ function App() {
               />
             )}
           />
-          <Route exact path="/" render={() => <HomePage />} />
+          <Route exact path="/home" render={() => <HomePage />} />
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/reviews/create" render={() => <ReviewCreateForm />} />

@@ -8,8 +8,10 @@ const HomePage = () => {
           <Row>
             <Col md="9">
               <h1>
-                Welcome to
                 <img src={logo} alt="Logo" width="230px" />
+                <Row>
+                  Welcome to Book Nook
+                </Row>
               </h1>
               <p>
               Book Nook is a cozy and welcoming space for bibliophiles to share their reviews on books they've read with fellow book lovers. 
