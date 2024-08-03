@@ -6,7 +6,6 @@ import "./api/axiosDefaults";
 import HomePage from "./pages/HomePage";
 import SignUpForm from "./pages/auth/SignUpForm";
 import SignInForm from "./pages/auth/SignInForm";
-import BookDetailsPage from "./pages/book/BookDetailsPage";
 import ReviewCreateForm from "./pages/reviews/ReviewCreateForm";
 import ReviewPage from "./pages/reviews/ReviewPage";
 import ReviewsPage from "./pages/reviews/ReviewsPage";
@@ -59,7 +58,6 @@ function App() {
           <Route exact path="/reviews/:id" render={() => <ReviewPage />} />
           <Route exact path="/reviews/:id/edit" render={() => <ReviewEditForm />} />
           <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
-          <Route exact path="/books/:id" render={() => <BookDetailsPage />} />
           <Route exact path="/profiles/:id/edit/username" render={() => <UsernameForm />} />
           <Route exact path="/profiles/:id/edit/password" render={() => <UserPasswordForm />} />
           <Route exact path="/profiles/:id/edit" render={() => <ProfileEditForm />} />
