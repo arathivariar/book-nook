@@ -87,7 +87,8 @@ Google Fonts is used for the fonts displayed on the website. I have selected sim
 
 ### Images    
 
-All the images are downloaded from the internet and belongs to the respective owners. I have used images that are publicly available on websites like Wikipedia. I hereby give due credit to the respective owners of all the images.   
+All the images are downloaded from the internet and belongs to the respective owners. I have used images that are publicly available on websites like Wikipedia. I hereby give due credit to the respective owners of all the images.    
+_Note:_ The size of the images are part of the intended design. 
 
 
 # Agile Methodologies    
