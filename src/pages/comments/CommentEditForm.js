@@ -6,8 +6,7 @@ import { axiosRes } from "../../api/axiosDefaults";
 import styles from "../../styles/CommentCreateEditForm.module.css";
 
 function CommentEditForm(props) {
-  console.log("Props in CommentEditForm: ", props);
-  const { id, content, setShowEditForm, setComments, review_id } = props;
+  const { id, content, setShowEditForm, setComments } = props;
 
   const [formContent, setFormContent] = useState(content);
 
@@ -17,11 +16,9 @@ function CommentEditForm(props) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("Review ID: ", review_id);
     try {
       await axiosRes.put(`/comments/${id}/`, {
         content: formContent.trim(),
-        review: review_id,
       });
       setComments((prevComments) => ({
         ...prevComments,
