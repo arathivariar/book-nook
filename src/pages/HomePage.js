@@ -16,7 +16,8 @@ const HomePage = () => {
               <p>
               Book Nook is a cozy and welcoming space for bibliophiles to share their reviews on books they've read with fellow book lovers. 
               It captures the idea of a community where readers can find refuge and camaraderie through their shared love of literature. 
-              Happy reading!
+              You can add your book reviews or read the book reviews shared by other readers. You need to follow them to see their reviews
+              on your feed. Interact with them with the help of likes and comments. Happy reading!
               </p>
             </Col>
           </Row>
