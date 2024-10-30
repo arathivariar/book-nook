@@ -39,6 +39,15 @@ const NavBar = () => {
       <i className="far fa-plus-square"></i>Add review
     </NavLink>
   );
+  const addBookIcon = (
+    <NavLink
+      className={styles.NavLink}
+      activeClassName={styles.Active}
+      to="/books/create"
+    >
+      <i className="far fa-plus-square"></i>Add book
+    </NavLink>
+  );
   const loggedInIcons = (
     <>
       <NavLink
