@@ -83,6 +83,16 @@ const ProfileEditForm = () => {
     }
   };
 
+  // Validate data
+  let formErrors = {};
+  if (!formData.bio) formErrors.bio = "Bio is required";
+  if (!formData.image) formErrors.image = "Image is required";
+  
+  if (Object.keys(formErrors).length > 0) {
+    setErrors(formErrors);
+    return;
+  }
+  
   const textFields = (
     <>
       <Form.Group>
