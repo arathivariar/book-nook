@@ -43,7 +43,7 @@ const NavBar = () => {
     <NavLink
       className={styles.NavLink}
       activeClassName={styles.Active}
-      to="/books/create"
+        to="/books/create"
     >
       <i className="far fa-plus-square"></i>Add book
     </NavLink>
@@ -107,7 +107,7 @@ const NavBar = () => {
             <img src={logo} alt="logo" height="45" />
           </Navbar.Brand>
         </NavLink>
-        {currentUser && addReviewIcon}
+        {currentUser && addReviewIcon && addBookIcon}
         <Navbar.Toggle
           ref={ref}
           onClick={() => setExpanded(!expanded)}
