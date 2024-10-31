@@ -117,7 +117,7 @@ function ReviewEditForm() {
         </Alert>
       ))}
       <Form.Group>
-        <Form.Label>Ratings</Form.Label>
+        <Form.Label>Snapshot Review</Form.Label>
         <Form.Control
           type="text"
           name="ratings"
