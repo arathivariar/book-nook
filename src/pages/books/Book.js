@@ -69,6 +69,12 @@ const handleDelete = async () => {
             {owner && <Card.Text className="text-center">{owner}</Card.Text>}
             {genre && <Card.Text>{genre}</Card.Text>}
             {language && <Card.Text>{language}</Card.Text>}
+            {description && <Card.Text>{description}</Card.Text>}
+            {star_rating_1 && <Card.arguments>{star_rating_1}</Card.arguments>}
+            {star_rating_2 && <Card.arguments>{star_rating_2}</Card.arguments>}
+            {star_rating_3 && <Card.arguments>{star_rating_3}</Card.arguments>}
+            {star_rating_4 && <Card.arguments>{star_rating_4}</Card.arguments>}
+            {star_rating_5 && <Card.arguments>{star_rating_5}</Card.arguments>}
           </Card.Body>
         </Card>
       );

@@ -132,6 +132,15 @@ function BookCreateForm() {
           onChange={handleChange}
         />
       </Form.Group>
+      <Form.Group>
+        <Form.Label>Language</Form.Label>
+        <Form.Control
+          type="text"
+          name="language"
+          value={language}
+          onChange={handleChange}
+        />
+      </Form.Group>
       {errors?.title?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
@@ -143,6 +152,15 @@ function BookCreateForm() {
           type="text"
           name="language"
           value={language}
+          onChange={handleChange}
+        />
+      </Form.Group>
+      <Form.Group>
+        <Form.Label>Description</Form.Label>
+        <Form.Control
+          type="text"
+          name="description"
+          value={description}
           onChange={handleChange}
         />
       </Form.Group>
