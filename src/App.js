@@ -9,7 +9,7 @@ import SignInForm from "./pages/auth/SignInForm";
 import ReviewCreateForm from "./pages/reviews/ReviewCreateForm";
 import ReviewPage from "./pages/reviews/ReviewPage";
 import ReviewsPage from "./pages/reviews/ReviewsPage";
-import BookPage from "./pages/books/Book";
+import Book from "./pages/books/Book";
 import BookCreateForm from "./pages/books/BookCreateForm";
 import { useCurrentUser } from "./contexts/CurrentUserContext";
 import ReviewEditForm from "./pages/reviews/ReviewEditForm";
@@ -19,7 +19,6 @@ import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import ContactPage from './pages/contact/ContactPage';
 import NotFound from "./components/NotFound";
-import Book from "./pages/books/Book";
 
 function App() {
   const currentUser = useCurrentUser();

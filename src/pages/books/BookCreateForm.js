@@ -41,8 +41,8 @@ function BookCreateForm() {
     updated_at: "",
   });
   const { title, author, owner, genre, language, description, image,
-  	   star_rating_1, star_rating_1star_rating_2, star_rating_3, star_rating_4,
-	   star_rating_5, created_at, updated_at, } = bookData;
+  	   star_rating_1, star_rating_2, star_rating_3, star_rating_4,
+	   star_rating_5, } = bookData;
 
   const imageInput = useRef(null);
   const history = useHistory();
